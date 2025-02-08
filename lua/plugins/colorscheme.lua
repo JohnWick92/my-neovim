@@ -1,11 +1,6 @@
 return {
-  { "rebelot/kanagawa.nvim", opts = {
-    transparent = true,
-  } },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "kanagawa-dragon",
-    },
-  },
+	"rebelot/kanagawa.nvim",
+	config = function()
+		require("kanagawa").load("dragon")
+	end,
 }
