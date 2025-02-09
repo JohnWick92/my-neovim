@@ -34,3 +34,4 @@ require("lazy").setup({
 })
 require("nvim-tree").setup()
 require("config.keymaps")
+vim.api.nvim_set_option("clipboard", "unnamed")
