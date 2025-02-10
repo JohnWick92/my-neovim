@@ -35,3 +35,7 @@ require("lazy").setup({
 require("nvim-tree").setup()
 require("config.keymaps")
 vim.api.nvim_set_option("clipboard", "unnamed")
+vim.opt.shiftwidth = 2
+vim.diagnostic.config({
+	signs = false,
+})
