@@ -21,7 +21,9 @@ return {
       },
       filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
     }
-    local vue_ls_config = {}
+    local vue_ls_config = {
+      filetypes = { "vue" },
+    }
     vim.lsp.config("vtsls", vtsls_config)
     vim.lsp.config("vue_ls", vue_ls_config)
     local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -29,6 +31,10 @@ return {
     vim.lsp.config("cssls", {
       capabilities = capabilities,
     })
-    vim.lsp.enable({ "vtsls", "vue_ls", "cssls", "tailwindcss" })
+    local pest_config = {
+      filetypes = { "php" },
+    }
+    vim.lsp.config("pest", pest_config)
+    vim.lsp.enable({ "vtsls", "vue_ls", "cssls", "tailwindcss", "intelephense", "sqlls", "pest", "laravel_ls" })
   end,
 }
