@@ -1,6 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
-  config = function()
+
+  -- When coding on vue project change opts to config
+  opts = function()
     local vue_language_server_path =
       "/home/shanks/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/"
     local vue_plugin = {
@@ -26,15 +28,9 @@ return {
     }
     vim.lsp.config("vtsls", vtsls_config)
     vim.lsp.config("vue_ls", vue_ls_config)
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-    vim.lsp.config("cssls", {
-      capabilities = capabilities,
+    vim.lsp.enable({
+      "vtsls",
+      "vue_ls",
     })
-    local pest_config = {
-      filetypes = { "php" },
-    }
-    vim.lsp.config("pest", pest_config)
-    vim.lsp.enable({ "vtsls", "vue_ls", "cssls", "tailwindcss", "intelephense", "sqlls", "pest", "laravel_ls" })
   end,
 }
