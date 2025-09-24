@@ -1,0 +1,1 @@
+/home/shanks/.config/omarchy/current/theme/neovim.lua
